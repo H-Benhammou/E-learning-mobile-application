@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+
+    <!-- Image or illustration -->
+    <ImageView
+        android:id="@+id/welcomeImage"
+        android:layout_width="250dp"
+        android:layout_height="175dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo_app"
+        android:layout_marginTop="60dp"
+        android:contentDescription="Welcome Image" />
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Learnify"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/welcomeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to E-Learning App"
+        android:layout_marginStart="10dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp" />
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/welcomeDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Discover a new way of learning! Our app offers personalized courses, interactive lessons, and a seamless learning experience to help you grow and succeed."
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:textColor="@color/white"
+
+        android:layout_marginTop="12dp"
+        android:paddingHorizontal="16dp" />
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/loginBtnW"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:text="Log In"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/true_blue"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF" />
+
+    <!-- Sign Up Button -->
+    <Button
+        android:id="@+id/signupBtnW"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/light_blue"
+        android:textColor="#FFFFFF" />
+
+
+</LinearLayout>
