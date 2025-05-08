@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.google.gms.google.services)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -33,14 +33,38 @@ android {
 }
 
 dependencies {
-
+    // AndroidX
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+
+    // Firebase
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
+
+    // Tests
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // Retrofit & Gson Converter
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Glide pour images
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+
+    implementation("com.android.volley:volley:1.2.1")
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("com.squareup.picasso:picasso:2.71828")
+    implementation ("com.google.firebase:firebase-firestore:24.9.1")
+
+
+
+
+
+
 }

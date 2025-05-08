@@ -1,0 +1,52 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="4dp">
+
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/courseImage"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/courseTitle"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/courseDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="14sp" />
+
+        <!-- Bouton Commentaire -->
+        <Button
+            android:id="@+id/commentButton"
+            android:text="Commenter"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/voirAvisButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voir les avis"
+            android:layout_marginTop="8dp"/>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
