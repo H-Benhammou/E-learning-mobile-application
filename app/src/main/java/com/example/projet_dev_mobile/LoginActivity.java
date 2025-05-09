@@ -42,92 +42,59 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.login_button);
         signupRedirectText = findViewById(R.id.signupRedirectText);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email = loginEmail.getText().toString().trim();
-                String password = loginPassword.getText().toString().trim();
+        loginButton.setOnClickListener(view -> {
+            String email = loginEmail.getText().toString().trim();
+            String password = loginPassword.getText().toString().trim();
 
-                if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    if (!password.isEmpty()) {
-                        loginUser(email, password);
-                    } else {
-                        loginPassword.setError("Password cannot be empty");
-                    }
-                } else if (email.isEmpty()) {
-                    loginEmail.setError("Email cannot be empty");
+            if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                if (!password.isEmpty()) {
+                    loginUser(email, password);
                 } else {
-                    loginEmail.setError("Email must be valid");
+                    loginPassword.setError("Password cannot be empty");
                 }
+            } else if (email.isEmpty()) {
+                loginEmail.setError("Email cannot be empty");
+            } else {
+                loginEmail.setError("Email must be valid");
             }
         });
 
-        signupRedirectText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
-            }
-        });
+        signupRedirectText.setOnClickListener(view ->
+                startActivity(new Intent(LoginActivity.this, SignUpActivity.class)));
     }
 
     private void loginUser(String email, String password) {
         auth.signInWithEmailAndPassword(email, password)
-                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-                        // Login successful, now get user details from Firestore by email
-                        getUserDetailsByEmail(email);
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                .addOnSuccessListener(authResult -> getUserDetailsByEmail(email))
+                .addOnFailureListener(e ->
+                        Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show());
     }
 
     private void getUserDetailsByEmail(String email) {
-        // Query Firestore to get user details by email
         db.collection("users")
                 .whereEqualTo("email", email)
                 .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocuments) {
-                        if (!queryDocuments.isEmpty()) {
-                            // Get the first document (should be only one matching the email)
-                            String firstName = queryDocuments.getDocuments().get(0).getString("firstName");
-                            String lastName = queryDocuments.getDocuments().get(0).getString("lastName");
+                .addOnSuccessListener(queryDocuments -> {
+                    if (!queryDocuments.isEmpty()) {
+                        String firstName = queryDocuments.getDocuments().get(0).getString("firstName");
+                        String lastName = queryDocuments.getDocuments().get(0).getString("lastName");
+                        String role = queryDocuments.getDocuments().get(0).getString("role");
 
-                            // Show welcome message with user's name
-                            showWelcomeMessage(firstName, lastName);
-
-                            // Navigate to main activity with user data
-                            startHomeActivity(firstName, lastName);
-                        } else {
-                            // User document not found in Firestore
-                            Toast.makeText(LoginActivity.this, "User details not found", Toast.LENGTH_SHORT).show();
-                        }
+                        Toast.makeText(LoginActivity.this, "Login success", Toast.LENGTH_SHORT).show();
+                        startHomeActivity(firstName, lastName, role);
+                    } else {
+                        Toast.makeText(LoginActivity.this, "User details not found", Toast.LENGTH_SHORT).show();
                     }
                 })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(LoginActivity.this, "Failed to fetch user info: " + e.getMessage(),
-                                Toast.LENGTH_SHORT).show();
-                    }
-                });
+                .addOnFailureListener(e ->
+                        Toast.makeText(LoginActivity.this, "Failed to fetch user info: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
-    private void showWelcomeMessage(String firstName, String lastName) {
-        Toast.makeText(LoginActivity.this, "Login succes", Toast.LENGTH_SHORT).show();
-    }
-
-    private void startHomeActivity(String firstName, String lastName) {
+    private void startHomeActivity(String firstName, String lastName, String role) {
         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
         intent.putExtra("firstName", firstName);
         intent.putExtra("lastName", lastName);
+        intent.putExtra("role", role);
         startActivity(intent);
         finish();
     }

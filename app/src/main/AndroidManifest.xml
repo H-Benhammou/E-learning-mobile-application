@@ -18,9 +18,17 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
+        <activity android:name=".DocumentListActivity" />
+        <activity android:name=".DocumentViewActivity" />
+        <activity android:name=".PdfViewActivity" />
+        <activity android:name=".TestListActivity" />
+
         <activity
             android:name=".SignUpActivity"
             android:exported="true"></activity>
+        <activity android:name=".CourseTrackingActivity"></activity>
+        <activity android:name=".VideoListActivity"></activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
