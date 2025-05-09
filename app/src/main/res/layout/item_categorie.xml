@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardViewCategorie"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="120dp"   <!-- Adapte la largeur -->
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/imageViewCategorie"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" <!-- Adapte la hauteur -->
+    android:scaleType="centerCrop"
+    android:contentDescription="@string/image_de_la_categorie" />
+    <!-- Tu peux ajouter un string pour contentDescription dans strings.xml -->
+
+    <TextView
+        android:id="@+id/textViewNomCategorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:text="Nom Catégorie"
+        android:textAppearance="?attr/textAppearanceListItemSmall"
+        android:maxLines="2"
+        android:ellipsize="end"/>
+
+    <!-- Si tu veux une description :
+    <TextView
+        android:id="@+id/textViewDescriptionCategorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center_horizontal"
+        android:text="Description courte"
+        android:textAppearance="?attr/textAppearanceCaption"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+    -->
+</LinearLayout>
+
+    </androidx.cardview.widget.CardView>
