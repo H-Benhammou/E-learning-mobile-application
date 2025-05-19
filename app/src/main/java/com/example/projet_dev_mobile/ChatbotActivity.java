@@ -26,9 +26,9 @@ import java.util.List;
 public class ChatbotActivity extends AppCompatActivity {
 
     // Watson Assistant configuration
-    private static final String API_KEY = "rBqWRysN_jxu8_F1VPJx68CNY8PMyGGmr4R1s4niasc6";
+    private static final String API_KEY = "***";
     private static final String ASSISTANT_URL = "https://api.au-syd.assistant.watson.cloud.ibm.com";
-    private static final String ASSISTANT_ID = "e2c78891-636c-41a9-9dfb-981fba644e55";
+    private static final String ASSISTANT_ID = "***";
     private static final String VERSION_DATE = "2021-06-14";
 
     // UI components
