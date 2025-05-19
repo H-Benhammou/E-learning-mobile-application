@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button loginBtn, signBtn;
+    Button loginBtn, signBtn, botBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         loginBtn = findViewById(R.id.loginBtnW);
         signBtn = findViewById(R.id.signupBtnW);
+        botBtn = findViewById(R.id.chatbotBtnW);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, SignUpActivity.class));
+            }
+        });
+
+        botBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ChatbotActivity.class));
             }
         });
 

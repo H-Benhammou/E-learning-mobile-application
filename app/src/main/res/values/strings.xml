@@ -6,4 +6,6 @@
     <string name="login">Login</string>
     <string name="phrase">Grow your skills, shape your future</string>
     <string name="logout">Log Out</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

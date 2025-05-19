@@ -40,7 +40,15 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
+    implementation(libs.okhttp)
+    implementation(libs.gson)
+    implementation(libs.assistant)
+    implementation(libs.common)
+    implementation(libs.recyclerview)
+    implementation(libs.datastore.core.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+
 }
