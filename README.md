@@ -3,7 +3,7 @@
 
 ## Présentation du projet
 
-**Learnify** est une application mobile éducative conçue pour favoriser l’apprentissage de nouvelles compétences grâce à un écosystème intelligent, interactif et centré sur l’utilisateur. L'application propose des cours, des articles collaboratifs, un moteur de recommandation avancé, et un assistant conversationnel basé sur l’IA nommé **AskNova**.
+**Learnify** est une application mobile éducative conçue pour favoriser l’apprentissage de nouvelles compétences grâce à un écosystème intelligent, interactif et centré sur l’utilisateur. L'application propose des cours diversifiés et interactifs, des quiz adaptés et un assistant conversationnel basé sur l’IA nommé **AskNova**.
 
 Elle s’adresse à trois types d’acteurs principaux, chacun disposant de fonctionnalités spécifiques selon son rôle dans l’écosystème :
 
