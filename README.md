@@ -42,7 +42,8 @@ Elle s’adresse à trois types d’acteurs principaux, chacun disposant de fonc
 
 ### 🎯 Mobile (Android)
 
-- **Java**
+- **Java** – développement Android natif
+- **Android Studio** – environnement de développement
 - **Firebase Authentication** – gestion des connexions utilisateurs.
 - **Cloud Firestore** – stockage de données temps réel.
 - **RecyclerView**, **LiveData**, **ViewModel** – UI dynamique.
